@@ -17,6 +17,7 @@ mysql --defaults-extra-file=$cnf --delimiter=";;" < page_before_insert.sql
 mysql --defaults-extra-file=$cnf --delimiter=";;" < pagelinks_before_insert.sql
 
 # get page content
+mkdir -p ../content # ensure directory existence
 cd ../content
 page_content=$(../get_content.sh $page_url)
 mysql --defaults-extra-file=$cnf < $page_content
