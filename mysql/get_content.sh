@@ -14,8 +14,8 @@ gunzip $gz # removes enwiki-latest-page.sql.gz, makes enwiki-latest-page.sql
 echo $(date +%s) Inflated $gz >> debugger.log
 
 # extract the insert statements and convert them to replace statements
-egrep "^INSERT INTO" $sql \ # find lines that beging with INSERT INTO keywords (SQL)
-	| bbe -e 's/INSERT INTO/REPLACE INTO/' \ # replace them with REPLACE INTO keywords
+egrep "^INSERT INTO" $sql \
+	| bbe -e 's/INSERT INTO/REPLACE INTO/' \
 	> $replace # replace-enwiki-latest-page.sql
 rm -f $sql # remove enwiki-latest-page.sql because we have replace-enwiki-latest-page.sql
 echo $(date +%s) Parsed $sql >> debugger.log
