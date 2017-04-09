@@ -6,7 +6,7 @@ sql=${gz%%.gz*} # enwiki-latest-page.sql
 replace="replace-$sql" # replace-enwiki-latest-page.sql
 
 # download data
-curl $url -o $gz
+curl -s $url -o $gz # supress output
 echo $(date +%s) Downloaded $url >> debugger.log
 
 # inflate downloaded data
