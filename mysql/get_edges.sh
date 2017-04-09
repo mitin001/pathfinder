@@ -13,8 +13,8 @@ mysql --defaults-extra-file=$cnf edges.sql
 
 # create triggers
 cd ../triggers
-mysql --defaults-extra-file=$cnf --delimiter=;; page_before_insert.sql
-mysql --defaults-extra-file=$cnf --delimiter=;; pagelinks_before_insert.sql
+mysql --defaults-extra-file=$cnf --delimiter=";;" page_before_insert.sql
+mysql --defaults-extra-file=$cnf --delimiter=";;" pagelinks_before_insert.sql
 
 # get page content
 cd ../content
